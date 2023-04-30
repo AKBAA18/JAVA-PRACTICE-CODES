@@ -1,0 +1,601 @@
+/******************************************************************************
+a14b15
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		Scanner sc=new Scanner(System.in);
+		String str=sc.nextLine();
+		StringBuffer num=new StringBuffer();
+		StringBuffer stri=new StringBuffer();
+		int inte=0;
+		for(int i=0;i<str.length();i++){
+		    if(Character.isAlphabetic(str.charAt(i))){
+		        num.delete(0,4);
+		        stri.append(str.charAt(i));
+		    }
+		    if(Character.isDigit(str.charAt(i))){
+		        num.append(str.charAt(i));
+		        int j=i+1;
+		        if(j<str.length() && Character.isDigit(str.charAt(j))){
+		            num.append(str.charAt(j));
+		        }
+		        inte=Integer.parseInt(num.toString());
+		      //  System.out.println(inte);
+		      //  System.out.println();
+		        for(int k=0;k<inte;k++){
+		            System.out.print(stri);
+		        }
+		        stri.delete(0,3);
+		    }
+		}
+		
+	}
+}
+
+
+*******************************************************************************/
+/******************************************************************************
+a1b3v4
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		Scanner sc=new Scanner(System.in);
+		String str=sc.nextLine();
+		int inte=0;
+		char c='\0';
+		char d='\0';
+		for(int i=0;i<str.length();i++)
+		{
+		    if(i%2!=0){
+		        c=str.charAt(i);
+		        inte=Character.getNumericValue(c);
+		        for(int j=0;j<inte;j++){
+		            d=str.charAt(i-1);
+		            System.out.print(d);
+		        }
+		    }
+		}
+		
+	}
+}
+
+
+*******************************************************************************/
+
+/******************************************************************************
+0 6 7  11 34 56 99
+99 0 56 6 34 7 11 
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int arr[]=new int[n];
+		int temp=0;
+		for(int i=0;i<n;i++){
+		    arr[i]=sc.nextInt();
+		}
+		for(int i=0;i<n;i++){
+		   for(int j=i+1;j<n;j++){
+		       if(arr[i]>arr[j]){
+		           temp=arr[i];
+		           arr[i]=arr[j];
+		           arr[j]=temp;
+		       }
+		   }
+		}
+		for(int i=0;i<n;i++){
+		    System.out.print(arr[i] + " ");
+		}
+		System.out.println();
+		for(int k=0, i=0,j=n-1;k<n;k++){
+		    if(k%2==0){
+		        System.out.print(arr[j] + " ");
+		        j--;
+		    }
+		    else{
+		        System.out.print(arr[i] + " ");
+		        i++;
+		    }
+		}
+	}
+}
+
+
+
+*******************************************************************************/
+/******************************************************************************
+element in odd decending element in even ascending 
+
+import java.util.*;
+public class Odddecending {
+
+    public static void main(String[] args) {
+		System.out.println("Hello World");
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int arr[]=new int[n];
+		int temp=0;
+		for(int i=0;i<n;i++){
+		    arr[i]=sc.nextInt();
+		}
+                for(int i=0;i<n;i++){
+		   for(int j=i+1;j<n;j++){
+		       if(arr[i]>arr[j]){
+		           temp=arr[i];
+		           arr[i]=arr[j];
+		           arr[j]=temp;
+		       }
+		   }
+		}
+		for(int i=0;i<n;i++){
+		    System.out.print(arr[i] + " ");
+		}
+		
+		System.out.println();
+		for(int k=0,j=n-1;k<=n/2;k++,j--){
+		    if(k%2==0){
+		        temp=arr[k];
+		        arr[k]=arr[j];
+		        arr[j]=temp;
+                        
+		    }
+		}
+		System.out.println();
+		for(int i=0;i<n;i++){
+		    System.out.print(arr[i] + " ");
+		}
+	}
+}
+
+
+*******************************************************************************/
+/******************************************************************************
+PATTERNS 
+
+package javapatterns;
+import java.util.*;
+public class Javapatterns {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        for(int i=0;i<n;i++){
+            for(int j=0;j<=i;j++){
+                System.out.print("+");
+            }
+            System.out.println();
+        }
+        System.out.println();
+        for(int i=0;i<n;i++){
+            for(int j=n;j>i;j--){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        System.out.println();
+        for(int i=0;i<n;i++){
+            for(int j=1;j<=i;j++){
+                System.out.print(" ");
+            }
+            for(int j=n;j>i;j--){
+                System.out.print("+");
+            }
+            System.out.println();
+        }
+        System.out.println();
+        for(int i=0;i<n;i++){
+            for(int j=n;j>i;j--){
+                System.out.print(" ");
+            }
+            for(int j=0;j<=i;j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        System.out.println();
+        for(int i=0;i<n;i++){
+            for(int j=0;j<=i;j++){
+                System.out.print("*");
+            }
+            System.out.println();   
+        }
+        for(int  i=0;i<n;i++){
+        for(int j=n-1;j>i;j--){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        System.out.println();
+        for(int i=0;i<n;i++){
+            for(int j=n;j>i;j--){
+                System.out.print(" ");
+                
+            }
+            for(int j=0;j<=i;j++){
+                System.out.print("+");
+            }
+            System.out.println();
+        }
+        for(int i=0;i<n;i++){
+            for(int j=-1;j<=i;j++){
+                System.out.print(" ");
+            }
+            for(int j=n-1;j>i;j--){
+                System.out.print("+");
+            }
+            System.out.println();
+        }
+        System.out.println();
+        for(int i=0;i<n;i++){
+            for(int j=n;j>i;j--){
+                System.out.print(" ");
+            }
+            for(int j=0;j<=i;j++){
+                System.out.print("*");
+            }
+            for(int j=1;j<=i;j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        System.out.println();
+        
+        
+        
+        
+    }
+    
+}
+
+
+*******************************************************************************/
+/******************************************************************************
+reverse a string by space
+import java.util.*;
+class Main{
+    public static void main(String ar[]){
+        Scanner sc=new Scanner(System.in);
+        String str=sc.nextLine();
+        String arr[]=str.split(" ");
+        String rev="";
+        for(int i=arr.length-1;i>=0;i--){
+            rev=rev+arr[i] + " ";
+            
+        }
+        System.out.print(rev);
+        
+    }
+    
+    
+}
+
+*******************************************************************************/
+/******************************************************************************
+NUMBER PATTERN ZOHO 
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		Scanner sc=new Scanner(System.in);
+		String str=sc.nextLine();
+		int n=str.length();
+		for(int i=0;i<n;i++){
+		    int j=n-i-1;
+		    for(int k=0;k<n;k++){
+		        if(k==i || k==j){
+		            System.out.print(str.charAt(k));
+		            
+		        }
+		        else{
+		            System.out.print(" ");
+		            
+		        }    
+		    }
+		    System.out.println("");
+		}
+	}
+}
+
+
+*******************************************************************************/
+/******************************************************************************
+test123String
+123 
+OP 4
+
+
+import java.util.*;
+class Main{
+    public static void main(String ar[]){
+        Scanner sc=new Scanner(System.in);
+        String str=sc.nextLine();
+        String mtr=sc.nextLine();
+        int n=str.length();
+        int k=0;
+        if(str.contains(mtr)){
+            System.out.println(str.indexOf(mtr));            
+        }
+        else{
+            k=-1;
+             System.out.println(k);
+        }
+    }
+}
+
+
+*******************************************************************************/
+/******************************************************************************
+MERGE AN ARRAY AND REMOVE DULICATES IN ARRAY 
+
+import java.util.*;
+class Main{
+    public static void main (String[] args) {
+        Scanner sc=new Scanner (System.in);
+        int n=sc.nextInt();
+        int m=sc.nextInt();
+        int arr1[]=new int [n];
+        int arr2[]=new int [m];
+        int sum=m+n;
+        ArrayList<Integer> myarr=new ArrayList<Integer>(sum);
+        for(int i=0;i<n;i++){
+            arr1[i]=sc.nextInt();
+            myarr.add(arr1[i]);
+        }
+        for(int i=0;i<m;i++){
+            arr2[i]=sc.nextInt();
+            myarr.add(arr2[i]);
+        }
+        for(int i=0;i<m+n;i++){
+            System.out.print(myarr.get(i) + " ");
+        }
+        System.out.println();
+        Collections.sort(myarr);
+        for(int i=0;i<m+n;i++){
+            System.out.print(myarr.get(i) + " ");
+        }
+        for(int i=0;i<myarr.size()-1;i++){
+            for(int j=i+1;j<myarr.size();j++){
+                if(myarr.get(i)==myarr.get(j)){
+                    myarr.remove(j);
+                }
+            }
+        }
+        System.out.println();
+        for(int i=0;i<myarr.size();i++){
+            System.out.print(myarr.get(i) + " ");
+        }
+    }
+}
+
+*******************************************************************************/
+/*******************************************************************************
+Given a set of numbers like <10, 36, 54,89,12> we want to find sum of weights based on the following conditions
+    1. 5 if a perfect square
+    2. 4 if multiple of 4 and divisible by 6
+    3. 3 if even number
+
+import java.util.*;
+import java.lang.Math;
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int arr[]=new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        ArrayList<Integer> myarr=new ArrayList<Integer>(n);
+        for(int i=0;i<n;i++){
+            int addd=0;
+            double sqrtt=Math.sqrt(arr[i]);
+            double result=(sqrtt-Math.floor(sqrtt));
+            if(result==0){
+                addd=addd+5;
+            }
+            if(arr[i]%4==0 && arr[i]%6==0)
+            {
+                addd=addd+4;
+            }
+            if(arr[i]%2==0){
+                addd=addd+3;
+            }
+            myarr.add(addd);
+        }
+       for(int i=0;i<n;i++){
+           System.out.print(arr[i] + ":" + myarr.get(i) + " , ");
+       }
+        
+    }
+}    
+    
+
+
+************************************************************************************/
+/******************************************************************************
+ Save the string “WELCOMETOZOHOCORPORATION” in a two dimensional array and search for substring like “too” in the two dimensional string both from left to right and from top to bottom.
+
+w	e	L	C	O
+M	E	T	O	Z
+O	H	O	C	O
+R	P	O	R	A
+T	I	O	n
+
+
+import java.util.*;
+import java.lang.Math;
+class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+        Scanner sc=new Scanner(System.in);
+        String str=sc.nextLine();
+        int matrix=0;
+        for(int i=0;i<str.length();i++){
+            matrix=i; 
+            if((matrix*matrix)>=str.length()){
+                matrix=i;
+                break;
+            }
+        }
+        //System.out.print(matrix);
+        char arr[][]=new char [matrix][matrix];
+        for(int i=0,k=0;i<matrix && k<str.length();i++){
+            for(int j=0;j<matrix;j++){
+               if(k<str.length()){
+                   arr[i][j]=str.charAt(k);
+                   k++;
+               }
+               else{
+                   arr[i][j] = ' ';
+               }
+            }
+        }
+        for(int i=0,k=0;i<matrix;i++){
+            for(int j=0;j<matrix;j++){
+                System.out.print(arr[i][j] + "  ");
+                
+            }
+            System.out.println();
+        }
+        for(int i=0;i<matrix;i++){
+            for(int j=0;j<matrix;j++){
+                if(arr[i][j]=='t' && j<matrix-2 && arr[i][j+1]=='o' && arr[i][j+2]=='o' && j<matrix){
+                    System.out.println(i + "," + j);
+                    System.out.println(i + "," + (j+2));
+                }
+            }
+        }
+       System.out.println();
+       for(int i=0;i<matrix;i++){
+            for(int j=0;j<matrix;j++){
+                if(arr[j][i]=='t' && j<matrix-2 && arr[j+1][i]=='o' && arr[j+2][i]=='o' ){
+                    System.out.println(j + "," + i);
+                    System.out.println((j+2) + "," + i);
+                }
+            }
+        }
+        
+    }
+}
+
+*******************************************************************************/
+/******************************************************************************
+Given a two dimensional array of string like
+
+  <”luke”, “shaw”>
+  <”wayne”, “rooney”>
+  <”rooney”, “ronaldo”>
+  <”shaw”, “rooney”> 
+Where the first string is “child”, second string is “Father”. And given “ronaldo” we have to find his no of 
+grandchildren Here “ronaldo” has 2 grandchildren. So our output should be 2.
+
+
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		Scanner sc=new Scanner(System.in);
+		int n=4;
+		int m=2;
+		String arr[][]=new String[n][m];
+		for(int i=0;i<n;i++){
+		    for(int j=0;j<m;j++){
+		        arr[i][j]=sc.nextLine();
+		        
+		    }
+		}
+		for(int i=0;i<n;i++){
+		    for(int j=0;j<m;j++){
+		        System.out.print(arr[i][j] + "    ");
+		    }
+		    System.out.println();
+		}
+		int addd=0;
+		String str=" ";
+		String mtr=" ";
+		String temp="";
+		ArrayList<Integer> myint=new ArrayList<Integer>();
+        ArrayList<String> mystr=new ArrayList<String>();
+		for(int j=0;j<m-1;j++){
+		    for(int i=0;i<n;i++){
+		            addd=0;
+		            str=arr[i][j];
+		          //  System.out.print(str + " ");
+		          
+		            for(int l=1;l<m;l++){
+		                for(int k=0;k<n;k++){
+		                    mtr=arr[k][l];
+		                  //  System.out.print(mtr + " ");
+		                    if(str.equals(mtr)){
+		                        addd++;
+		                    }
+		                    temp=arr[i][j+1];
+		                }
+		                mystr.add(temp);
+                        myint.add(addd);
+		            }
+		    }
+		}
+		System.out.println(myint);
+		System.out.println(mystr);
+		
+	}
+}
+
+
+*******************************************************************************/
+/******************************************************************************
+Form a number system with only 3 and 4. Find the nth number of the number system.
+Eg.) 
+The numbers are: 3, 4, 33, 34, 43, 44, 333, 334, 343, 344, 433, 434, 443, 444, 3333, 3334, 3343, 3344, 3433, 3434, 3443, 3444 ….
+
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		Scanner sc=new Scanner(System.in);
+		int temp=0;
+		for(int i=0;i<10000;i++){
+		    String str=Integer.toString(i);
+		    for(int j=0;j<str.length();j++){
+		        if(str.charAt(j)=='3' || str.charAt(j)=='4'){
+		            temp=2;
+		        }
+		        else{
+		            temp=0;
+		            break;
+		        }
+		        
+		    }
+		    if(temp>0){
+		        System.out.print(str + "  ");
+		    }
+		}
+		
+	    
+	    
+	}
+}
+
+
+
+
+
+
+*******************************************************************************/
+

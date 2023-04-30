@@ -1,0 +1,253 @@
+************************INHERITANCE**************************
+import java.util.*;
+//single inheritance 
+class a{
+}
+class b extends a{
+    public void printt(){
+        System.out.println("1.Single inhheritance");
+    }
+}
+//multiple inheritance 
+interface aa{
+    public void pprint();
+}
+interface bb{
+    public void sum();
+}
+class c implements aa,bb{
+    public void sum(){
+        System.out.print("2.");
+    }
+    public void pprint(){
+        System.out.println("Multiple inheritance");
+    }
+}
+//multi level inheritance
+class d{
+    int a=3;
+}
+class e extends d{
+     String str="MultiLevel Inheritance";
+}
+class f extends e{
+    public void display(){
+        System.out.println(a + "." + str);
+    }
+}
+//hierarchical inheritance 
+class g{
+    int bb=4;
+    String variable="Hierarchical Inheritance ";
+    
+}
+class h extends g{
+    
+}
+class i extends g {
+    public void show(){
+        System.out.println(bb + "." +variable);
+    }
+}
+//hybrid inheritance 
+class j{
+    int num=5;
+}
+class k extends j {
+    String strr="Hierarchical inheritance ";
+    
+}
+class l extends k{
+    
+}
+class m extends k{
+    public void preview(){
+        System.out.println(num + "." + strr);
+    }
+}
+public class Main
+{
+	public static void main(String[] args) {
+		System.out.println("Types of Inheritance ");
+	    b obj=new b();
+	    obj.printt();
+	    c obj1=new c();
+	    obj1.sum();
+	    obj1.pprint();
+	    f obj2=new f();
+	    obj2.display();
+	    i obj3=new i();
+	    obj3.show();
+	    m obj4=new m();
+	    obj4.preview();
+	}
+}
+************************************************************
+***********************POLIMORPHISM*************************
+import java.util.*;
+class a{
+    public void print(){
+        System.out.println("THIS IS CLASS A");
+    }
+    public void sum(double aa ,double bb){
+        System.out.println("THE SUM IS " + (aa+bb));
+    }
+    public void tsum(int aa,int bb,int cc){
+        System.out.println("THE SUM IS " + (aa+bb+cc));
+    }
+}
+class b extends a{
+    public void print(){
+        System.out.println("THIS IS CLASS B");
+    } 
+    public void sum(int aa,int bb){
+        System.out.println("THE SUM IS " + (aa+bb));
+    }
+}
+class Main{
+    public static void main(String ar[]){
+        b obj=new b();
+        obj.print();//method overriding 
+        obj.sum(11.2,33.5);// method overloading by same method name but differ in datatype
+        obj.sum(33,22);// method overloading by same method name but differ in datatype
+        obj.tsum(12,23,34);// method overloading by same method name but differ in number of arguments 
+    }
+}
+**************************************************************
+***********************ABSTRACTION***************************
+//by abstract class and abstract method
+import java.util.*;
+abstract class a{
+    abstract public void show();
+    public void display(){
+        System.out.println("Normal method can be defined inside of abstract class");
+    }
+}
+class b extends a{
+    public void show(){
+        System.out.println("Abstract method defined here");
+    }
+}
+class Main{
+    public static void main(String ar[]){
+        b obj =new b();
+        obj.show();
+        obj.display();
+    }
+}
+//by interface
+import java.util.*;
+interface aa{
+    public void show();
+}
+interface bb{
+    public void sum();
+}
+class c implements aa,bb{
+    public void sum(){
+        System.out.print("2.");
+    }
+    public void show(){
+        System.out.println("Multiple inheritance can be implemented");
+    }
+}
+class Main{
+    public static void main(String ar[]){
+        c obj1 =new c();
+        obj1.sum();
+        obj1.show();
+        
+    }
+}
+**********************************************************
+********************ENCAPSULATION*************************
+import java.util.*;
+class a{
+    private int a=10;
+    private String vari="enncapsu";
+    public void setname(int a, String vari){
+        this.a=a;
+        this.vari=vari;
+    }
+    public String getname(){
+        return this.vari;
+    }
+     public int getnum(){
+        return this.a;
+    }
+}
+class Main{
+    public static void main(String ar[]){
+        a obj=new a();
+        obj.setname(01,"ENCAPSULATION");
+        System.out.println(obj.getname());
+        System.out.println(obj.getnum());
+        
+    }
+}
+************************************************************
+********************CONSTRUCTOR***************************
+import java.util.*;
+class a{
+    int num=1;
+    a(){
+     System.out.println(num + ".Default constructor called ") ; 
+    }
+    a(int bb){
+        System.out.println(bb+ "."+"Parameterrized Constructor");
+    }
+}
+class b{
+    int aa=10;
+    String vari="Copy Constructor";
+    b(){}
+    b(int numm,String vari){
+        this.aa=numm;
+        this.vari=vari;
+    }
+    b(b b){
+        aa=b.aa;
+        vari=b.vari;
+        System.out.println(aa+"."+vari);
+    }
+}
+class Main{
+    public static void main(String ar[]){
+        a obj =new a();//class a default constructor call 
+        a obj1=new a(2);//class a parameterized constructor call
+        b obj2=new b();//class b default constructor call
+        b obj3=new b(3,"COPY CONSTRUCTOR");//class b parameterized constructor 
+        b obj4=new b(obj3);//passsing value to copy constructor (creating an obj using another java class ) 
+    }
+}
+************************************************************
+******************THIS AND SUPER  KEYWORD*******************
+
+package thissuper;
+import java.util.*;
+class a {
+    int a=10;
+    String vari="Value cchanged by this keyword ";
+    public void display(int c){
+        System.out.println("BEFORE CHANGING VALUE BY THIS "+a);
+        this.a=c;
+        System.out.println("AFTER CHANGING VALUE BY THIS "+a);
+    }
+}
+class b extends a {
+    public void show(int b){
+        System.out.println("BEFORE CHANGING VALUE BY THIS "+super.a);
+        super.a=b;
+        System.out.println("AFTER CHANGING VALUE BY THIS "+b);
+    }
+}
+class Thissuper{
+    public static void main(String ar[]){
+        a obj=new a();
+        b obj1=new b();
+        obj.display(1);
+        obj1.show(2);
+    }
+}
+************************************************************
+
